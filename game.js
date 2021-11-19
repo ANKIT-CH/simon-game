@@ -28,8 +28,8 @@ $(".btn").click(function () {
 });
 
 function match(currentLevel) {
-  if (userClickedPattern[currentLevel] == gamepattern[currentLevel]) {
-    if (userClickedPattern === gamepattern.length) {
+  if (userClickedPattern[currentLevel] === gamepattern[currentLevel]) {
+    if (userClickedPattern.length === gamepattern.length) {
       setTimeout(function () {
         nextSequence();
       }, 2000);
@@ -41,6 +41,7 @@ function match(currentLevel) {
     setTimeout(function () {
       $("body").removeClass("game-over");
     }, 200);
+
     startOver();
   }
 }
@@ -69,5 +70,5 @@ function nextSequence() {
 function startOver() {
   level = 0;
   gamepattern = [];
-  started = true;
+  started = false;
 }
